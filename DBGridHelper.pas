@@ -1,4 +1,4 @@
-unit DBGridHelper;
+unit GDDBGridHelper;
 
 interface
 
@@ -13,7 +13,7 @@ type
     procedure CustomColEnter(Sender: TObject);
   public
     procedure EnableCheckboxForBooleanField;
-    procedure SetEditingEnabled(Value: Boolean); // Método para configurar o dgEditing
+    procedure SetEditingEnabled(Value: Boolean); // MÃ©todo para configurar o dgEditing
   end;
 
 implementation
@@ -36,7 +36,7 @@ end;
 
 procedure TDBGridHelper.CustomColEnter(Sender: TObject);
 begin
-  // Desabilitar edição para colunas booleanas
+  // Desabilitar ediÃ§Ã£o para colunas booleanas
   if Assigned(Self.SelectedField) and (Self.SelectedField.DataType = ftBoolean) then
     SetEditingEnabled(False)
   else
